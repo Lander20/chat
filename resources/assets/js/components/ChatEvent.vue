@@ -40,6 +40,7 @@
 
             Echo.private('private-chat').listen('MessageSent', (message) => {
                 this.text = '';
+                this.file = '';
                 this.messages.push({
                     message: message.message.message,
                     user: message.user,
@@ -57,9 +58,7 @@
 
                 axios.post('/message',formData,
                     {headers: { 'Content-Type': 'multipart/form-data'}}
-                ).then(function(){
-                    this.text = '';
-                });
+                );
             },
             handleFileUpload(){
                 this.file = this.$refs.file.files[0];

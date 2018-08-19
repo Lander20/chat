@@ -35,6 +35,7 @@ npm run production
 
 laravel-echo-server start                                                                                            
 redis-server
+php artisan queue:listen --tries=1
 
 php artisan serve
 ```
